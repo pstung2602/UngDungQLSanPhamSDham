@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> Danh sách sản phẩm:<span id="sanpham"></span></p>
+<input onclick="them()" type="button" value="Thêm">
+<input onclick="rename()" type="button" value="Sửa">
+<input onclick="xoa()" type="button" value="Xóa">
+<script>
+    let arr=["Toán","Vật Lý","Ngữ Văn","Thể Dục"];
+    document.getElementById("sanpham").innerHTML=arr;
+    function them() {
+        let x=prompt("Nhập tên sản phẩm");
+        arr.push(x);
+        document.getElementById("sanpham").innerHTML = arr;
+    }
+    function rename() {
+        let x=prompt("Nhập tên sản phẩm muốn sửa");
+        let y=prompt("Đổi thành");
+        for(i=0;i<arr.length;i++){
+            if(x===arr[i]){
+                arr[i]=y;
+            }
+        }
+        document.getElementById("sanpham").innerHTML=arr;
+    }
+    function xoa() {
+        let x=prompt("Nhập tên sản phẩm muốn xóa");
+        for(i=0;i<arr.length;i++){
+            if(x===arr[i]){
+                arr[i]='';
+            }
+
+        }
+        document.getElementById("sanpham").innerHTML=arr;
+
+    }
+
+
+</script>
+
+</body>
+</html>
